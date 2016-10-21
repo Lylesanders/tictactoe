@@ -1,72 +1,53 @@
-def make_board(p)
+def make_board(position)	# print tic tac toe board with values from a position array
+	puts "\n\n"
+	 puts " #{position[0]} | #{position[1]} | #{position[2]} "
+	 puts "-----------"
+	 puts " #{position[3]} | #{position[4]} | #{position[5]} "
+	 puts "-----------"
+	 puts " #{position[6]} | #{position[7]} | #{position[8]} "
+	puts "\n\n"
+end
 
-puts "\n\n"
- puts " #{p[0]} | #{p[1]} | #{p[2]} "
- puts "-----------"
- puts " #{p[3]} | #{p[4]} | #{p[5]} "
- puts "-----------"
- puts " #{p[6]} | #{p[7]} | #{p[8]} "
-puts "\n\n"
+def initialize_game			#set all game variables to default settings
 
 end
 
-# def main_loop(p,player1,player2)
-# make_move(player1,player2)
-# make_board(p)
-
-# end
-
-# def set_players #(player1,player2)
-
-# end
-
-def make_move(player1,player2)
-	puts "hello world "
-end
-
-# initialized_game
-
-# def initialized_game
-	p = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-# end
-#set_players
-player1 = " "
-player2 = " "
-
-	prompt = ">> "
-	puts "Player 1, what is your name?"
-	print prompt
-	player_1_name = gets.chomp
-	puts "OK: #{player_1_name} are you using X or O?"
-	print prompt
-	player1 = gets.chomp
-	player1.upcase!
-
-	puts player1
-	if player1 == "X"
-		player2 ="O"
-	else
-		player2 = "X"
-	end
-
-
-puts "player 1 #{player1}"
-puts "player 2 #{player2}"
-puts "hello world"
-	turn = 1
-	make_board(p)
-9.times do
-
-	#take turn
-	puts "choose your position"
+def take_turns(turn,player,position)		# gets the players input and updates the position array
+	puts "Player 1, #{player[0]}"
+	puts "player 2, #{player[1]}"
+	puts "control turn = #{turn}"
+	puts "player #{turn+1} choose your square"
 	mark1 = gets.chomp.to_i
 	mark = mark1-1
-	p[mark] = player1
+	position[mark] = player[turn]
 
-make_board(p)
-	if turn ==1
-		turn = 2
-	else
-		turn = 1
-	end
 end
+
+def find_winner(position)	# checks multiple places in the array to determine winner
+
+end
+
+# def game_menu
+
+#end
+
+# def game_instructions
+	
+# end
+
+# def main_loop				#controls the game play
+	position =[" "," "," "," "," "," "," "," "," "]
+	player = ["X","O"]
+	turn = 0
+	make_board(position)
+	#begin main game loop here, should be a while loop that breaks if find_winner not equal none
+
+	9. times do 
+	take_turns(turn,player,position)
+	make_board(position)
+		if turn == 0
+			turn =1
+		else
+			turn = 0
+		end
+	end
