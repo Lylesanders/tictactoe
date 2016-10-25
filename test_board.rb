@@ -32,4 +32,12 @@ class TestBoard < Minitest::Test
        assert_equal(true, board.valid_space?(2))
     end
 
+    def test_for_invalid_input
+    	board = Board.new
+    	board.position_board = ["X"," "," "," "," "," "," "," "," "]
+    	assert_equal(true, board.valid_input?(0))
+    end
+
+
+
 end

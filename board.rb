@@ -29,4 +29,10 @@
     	end
 
     end
+
+    def valid_input?(position)
+    	 position >= 0 && position <=8
+
+
+    end
 end
