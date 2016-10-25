@@ -23,8 +23,14 @@ def take_turns(turn,player,position)		# gets the players input and updates the p
 
 end
 
-def find_winner(position)	# checks multiple places in the array to determine winner
+def find_winner(position,turn,player)	# checks multiple places in the array to determine winner
+	winner = "none"
 
+
+	if position[1] && position[5]  && position[9] == player[turn]
+		winner = "winner"
+		puts "winner"
+	end
 end
 
 # def game_menu
@@ -45,9 +51,15 @@ end
 	9. times do 
 	take_turns(turn,player,position)
 	make_board(position)
+	find_winner(position,turn,player)
 		if turn == 0
 			turn =1
 		else
 			turn = 0
 		end
 	end
+
+	# keep what is working
+	#modulize it and get rid of any logic that uses terminals
+	# use game class
+	
