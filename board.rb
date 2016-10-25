@@ -32,12 +32,13 @@
     	 position.to_i >= 0 && position.to_i <= 8 && position =~ (/\d/)
     end
 
-    # def integer?(position)
-    # 	 if position =~ /^[0-9]/
-    # 	 	true
-    # 	 else
-    # 	 	false
-    # 	 end
-    # end
+    def full_board?
+    	unless position_board. include?("")
+    		true
+    	else
+    		false
+    	end
+
+    end
 
 end
