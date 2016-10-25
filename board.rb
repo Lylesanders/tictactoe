@@ -29,16 +29,31 @@
     end
 
     def valid_input?(position)
-    	 position.to_i >= 0 && position.to_i <= 8 && position =~ (/\d/)
+    	if position =~ /^[0-8]/ && position >= "0" && position <= "8" && position =~ (/\d/)
+                true
+            else
+                false
+            end
+	 
     end
 
     def full_board?
-    	unless position_board. include?("")
-    		true
-    	else
-    		false
-    	end
+    	position_board.count(" ") == 0
 
+    end
+
+    def winner?(symbol)
+    	#HORIZONTAL
+    	position_board[0] == symbol && position_board[1] == symbol && position_board[2] == symbol
+    	position_board[3] == symbol && position_board[4] == symbol && position_board[5] == symbol
+    	position_board[6] == symbol && position_board[7] == symbol && position_board[8] == symbol
+    	# VERTICAL
+    	position_board[0] == symbol && position_board[3] == symbol && position_board[6] == symbol
+    	position_board[1] == symbol && position_board[4] == symbol && position_board[7] == symbol
+    	position_board[2] == symbol && position_board[5] == symbol && position_board[8] == symbol
+    	#DIAGONAL
+    	position_board[0] == symbol && position_board[4] == symbol && position_board[8] == symbol
+    	position_board[2] == symbol && position_board[4] == symbol && position_board[6] == symbol
     end
 
 end
