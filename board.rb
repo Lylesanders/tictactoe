@@ -6,6 +6,7 @@
          #@board = Array.new(9, @empty_square) #makes an array of 9 " "'s
          @position_board = Array.new(9, " ")
        end
+       
        def update(position, symbol) #this is how to space is updated
            @position_board[position.to_i] = symbol
        end

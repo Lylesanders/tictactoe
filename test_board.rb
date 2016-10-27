@@ -64,7 +64,7 @@ class TestBoard < Minitest::Test
 
     def test_for_false_winner
     	board = Board.new
-      	board.position_board = ["O","O","O"," "," "," "," "," "," "]
+      	board.position_board = ["O","X","O"," "," "," "," "," "," "]
      	symbol = "O"
        assert_equal(true, board.winner?(symbol))
    end
