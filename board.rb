@@ -1,10 +1,11 @@
 class Board
 
-	attr_reader :board, :emplty_square
+	attr_reader :position_board
 
-	def initialize # unplaid square is empty
-		@empty_square = "-"
-
+	def initialize 
+		@empty_square = "-"# unplaid square is empty
+		# @board = Array.new(9,"")
+		@position_board = Array.new(9,"")
 
 	end #initialize
 

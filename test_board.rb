@@ -9,7 +9,7 @@ class TestBoard < Minitest::Test
 
 	def test_new_board # test that new board is created
 		board = Board.new()
-		assert_equal(["","","","","","","",""], board.position_board)
+		assert_equal(["","","","","","","","",""], board.position_board)
 	end
 
 
