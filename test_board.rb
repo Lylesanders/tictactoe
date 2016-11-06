@@ -12,6 +12,12 @@ class TestBoard < Minitest::Test
 		assert_equal(["","","","","","","","",""], board.position_board)
 	end
 
+	def test_first_update_of_board
+		board = Board.new
+		board.update(0,"X")
+		assert_equal(["X","","","","","","","","",], board.position_board)
+	end # test first update of board
+
 
 
 end # classw
