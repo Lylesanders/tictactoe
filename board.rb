@@ -28,7 +28,20 @@ class Board
 
 	def winner?(mark)
 		# true
-		position_board[0] == mark && position_board[1] == mark && position_board[2] == mark
+		position_board[0] == mark && position_board[1] == mark && position_board[2] == mark ||
+		position_board[3] == mark && position_board[4] == mark && position_board[5] == mark ||
+		position_board[6] == mark && position_board[7] == mark && position_board[8] == mark ||
+		position_board[0] == mark && position_board[3] == mark && position_board[6] == mark ||
+		position_board[1] == mark && position_board[4] == mark && position_board[7] == mark ||
+		position_board[2] == mark && position_board[5] == mark && position_board[8] == mark ||
+		position_board[0] == mark && position_board[4] == mark && position_board[8] == mark ||
+		position_board[2] == mark && position_board[4] == mark && position_board[6] == mark 
+
+		# puts "Board"
+		# puts "#{position_board[0]}|#{position_board[1]}|#{position_board[2]}"
+		# puts "#{position_board[3]}|#{position_board[4]}|#{position_board[5]}"
+		# puts "#{position_board[6]}|#{position_board[7]}|#{position_board[8]}"
+		# puts "end board"
 	end
 
 

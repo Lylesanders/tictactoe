@@ -51,15 +51,33 @@ class TestBoard < Minitest::Test
 		assert_equal(true, board.winner?(mark))
 	end #test winner 123
 
-		def test_no_winner_123 #7
+	def test_no_winner_123 #8
 		board = Board.new
 		board.position_board = ["X","X","O","","O","X","","","O"]
 		mark = "X"
 		assert_equal(false, board.winner?(mark))
 	end #test winner 123
 
+	def test_winner_456 #9
+		board = Board.new
+		board.position_board = ["","","","X","X","X","","",""]
+		mark = "X"
+		assert_equal(true, board.winner?(mark))
+	end #test winner 123
 
+	def test_winner_789 # 10
+		board = Board.new
+		board.position_board = ["","","","","","","X","X","X"]
+		mark = "X"
+		assert_equal(true, board.winner?(mark))
+	end #test winner 123
 
+	def test_winner_147 # 10
+		board = Board.new
+		board.position_board = ["X","","","X","","","X","",""]
+		mark = "X"
+		assert_equal(true, board.winner?(mark))
+	end #test winner 123
 
 
 end # class
