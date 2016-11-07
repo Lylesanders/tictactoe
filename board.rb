@@ -5,7 +5,7 @@ class Board
 
 	def initialize 
 		@empty_square = "-"# unplaid square is empty
-		# @board = Array.new(9,"")
+		@board = Array.new(9,"")
 		@position_board = Array.new(9,"")
 
 	end #initialize
@@ -27,7 +27,8 @@ class Board
 	end
 
 	def winner?(mark)
-		true
+		# true
+		position_board[0] == mark && position_board[1] == mark && position_board[2] == mark
 	end
 
 
