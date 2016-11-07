@@ -12,6 +12,14 @@ class TestConsoleGame < Minitest::Test
 		assert_equal("X", player.marker)
 	end
 
+	def test_for_change_player
+		player_1 = player_1
+		player_2 = player_2
+		game = ConsoleGame.new(player_1, player_2)
+		game.current_player = player_2
+		assert_equal(player_1, game.current_player)
+	end
+
 
 
 end # class test console game

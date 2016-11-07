@@ -19,6 +19,7 @@ class ConsoleGame
         else
             @current_player = player_1
         end
+        @current_player
     end
 
     end # ConsloeGame
