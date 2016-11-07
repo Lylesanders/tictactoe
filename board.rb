@@ -1,6 +1,7 @@
 class Board
 
 	attr_accessor :position_board, :update, :available_space # this section contains the names of the functions in this class, no question marks in this section
+	# question do all functions to be called in this class have to be listed in  attr_accessor?
 
 	def initialize 
 		@empty_square = "-"# unplaid square is empty
@@ -19,7 +20,14 @@ class Board
 		else
 			true
 		end #if
-	end # available soace
+	end # available space
+
+	def full_board?
+		position_board.count("") == 0
+	end
+
+
+
 
 
 end # class board

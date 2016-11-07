@@ -32,6 +32,12 @@ class TestBoard < Minitest::Test
 		assert_equal(false, board.available_space?(1))
 	end # test no update occupied space
 
+	def test_full_board
+		board = Board.new
+		board.position_board = ["X","O","X","O","X","O","X","O","X"]
+		assert_equal(true,board.full_board?)
+	end
+
 
 
 
