@@ -20,6 +20,13 @@ class TestConsoleGame < Minitest::Test
 		assert_equal(player_1, game.current_player)
 	end
 
+	def test_game_not_over
+		player_1 = player_1
+		player_2 = player_2		
+		game = ConsoleGame.new(player_1, player_2)
+		assert_equal(false, game.board.winner?(player_1))
+	end #test game not over
+
 
 
 end # class test console game

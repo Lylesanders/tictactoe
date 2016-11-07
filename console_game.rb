@@ -2,13 +2,14 @@ require_relative "board.rb"
 require_relative "console_human.rb"
 	
 class ConsoleGame
-    attr_accessor :board, :player_1, :player_2, :current_player
+    attr_accessor :board, :player_1, :player_2, :current_player, :winner
 
     def initialize(player_1, player_2)
         @board = Board.new
         @player_1 = player_1
         @player_2 = player_2
         @current_player = player_2
+        @winner = winner
     end
 
 
@@ -21,5 +22,12 @@ class ConsoleGame
         end
         @current_player
     end
+
+    def game_over?
+    	board.full_board || board.winner?(current_player.mark)
+    end
+
+
+
 
     end # ConsloeGame
