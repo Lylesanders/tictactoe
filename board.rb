@@ -26,6 +26,10 @@ class Board
 		position_board.count("") == 0
 	end
 
+	def winner?(mark)
+		true
+	end
+
 
 
 
