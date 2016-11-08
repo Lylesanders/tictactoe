@@ -9,6 +9,7 @@ class TestConsoleGame < Minitest::Test
 
 	def test_create_player
 		player = Human.new("X")
+		marker = "X"
 		assert_equal("X", player.marker)
 	end
 
@@ -45,20 +46,18 @@ class TestConsoleGame < Minitest::Test
 		assert_equal(true, game.board.full_board?)
 	end
 
-	# def test_winner_player_1
-	# 	player_1 = player_1
-	# 	player_2 = player_2
-	# 	game = ConsoleGame.new(player_1, player_2)
-	# 	board = Board
-	# 	mark = "X"
-	# 	player_1 = mark 
-	# 	game.board.position_board[0] = "X"	
-	# 	game.board.position_board[1] = "X"	
-	# 	game.board.position_board[2] = "X"	
-	# 	assert_equal(true, game.game_over?)
-	# end
-
-
+	def test_winner_player_1
+		player_1 = player_1
+		player_2 = player_2
+		game = ConsoleGame.new(player_1, player_2)
+		board = Board
+		marker = "X"
+		player_1 = marker 
+		game.board.position_board[0] = marker
+		game.board.position_board[1] = marker
+		game.board.position_board[2] = marker	
+		assert_equal(true, game.board.winner?(marker))
+	end
 
 
 

@@ -1,6 +1,6 @@
 class Board
 
-	attr_accessor :position_board, :update, :available_space # this section contains the names of the functions in this class, no question marks in this section
+	attr_accessor :position_board, :update, :available_space # this section contains the names of the functions in this class, no question markers in this section
 	# question do all functions to be called in this class have to be listed in  attr_accessor?
 
 	def initialize 
@@ -10,8 +10,8 @@ class Board
 
 	end #initialize
 
-	def update(place,mark)
-		@position_board[place.to_i] = mark
+	def update(place,marker)
+		@position_board[place.to_i] = marker
 	end #update
 
 	def available_space?(place)
@@ -26,18 +26,18 @@ class Board
 		position_board.count("") == 0
 	end
 
-	def winner?(mark)
+	def winner?(marker)
 
-		puts "Winner is here"
+		# puts "Winner is here"
 		# true
-		position_board[0] == mark && position_board[1] == mark && position_board[2] == mark ||
-		position_board[3] == mark && position_board[4] == mark && position_board[5] == mark ||
-		position_board[6] == mark && position_board[7] == mark && position_board[8] == mark ||
-		position_board[0] == mark && position_board[3] == mark && position_board[6] == mark ||
-		position_board[1] == mark && position_board[4] == mark && position_board[7] == mark ||
-		position_board[2] == mark && position_board[5] == mark && position_board[8] == mark ||
-		position_board[0] == mark && position_board[4] == mark && position_board[8] == mark ||
-		position_board[2] == mark && position_board[4] == mark && position_board[6] == mark 
+		position_board[0] == marker && position_board[1] == marker && position_board[2] == marker ||
+		position_board[3] == marker && position_board[4] == marker && position_board[5] == marker ||
+		position_board[6] == marker && position_board[7] == marker && position_board[8] == marker ||
+		position_board[0] == marker && position_board[3] == marker && position_board[6] == marker ||
+		position_board[1] == marker && position_board[4] == marker && position_board[7] == marker ||
+		position_board[2] == marker && position_board[5] == marker && position_board[8] == marker ||
+		position_board[0] == marker && position_board[4] == marker && position_board[8] == marker ||
+		position_board[2] == marker && position_board[4] == marker && position_board[6] == marker 
 
 		# puts "Board"
 		# puts "#{position_board[0]}|#{position_board[1]}|#{position_board[2]}"
