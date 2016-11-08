@@ -27,6 +27,8 @@ class Board
 	end
 
 	def winner?(mark)
+
+		puts "Winner is here"
 		# true
 		position_board[0] == mark && position_board[1] == mark && position_board[2] == mark ||
 		position_board[3] == mark && position_board[4] == mark && position_board[5] == mark ||

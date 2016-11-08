@@ -24,7 +24,8 @@ class ConsoleGame
     end
 
     def game_over?
-    	board.full_board || board.winner?(current_player.mark)
+    	# puts "Testing for game over"
+    	board.full_board? || board.winner?(current_player)
     end
 
 

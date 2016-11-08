@@ -27,6 +27,39 @@ class TestConsoleGame < Minitest::Test
 		assert_equal(false, game.board.winner?(player_1))
 	end #test game not over
 
+	def test_tie_game_over
+		player_1 = player_1
+		player_2 = player_2
+		game = ConsoleGame.new(player_1, player_2)
+		board = board
+		game.board.position_board[0] = "X"	
+		game.board.position_board[1] = "O"	
+		game.board.position_board[2] = "X"	
+		game.board.position_board[3] = "O"	
+		game.board.position_board[4] = "X"	
+		game.board.position_board[5] = "X"	
+		game.board.position_board[6] = "O"	
+		game.board.position_board[7] = "X"	
+		game.board.position_board[8] = "O"	
+
+		assert_equal(true, game.board.full_board?)
+	end
+
+	# def test_winner_player_1
+	# 	player_1 = player_1
+	# 	player_2 = player_2
+	# 	game = ConsoleGame.new(player_1, player_2)
+	# 	board = Board
+	# 	mark = "X"
+	# 	player_1 = mark 
+	# 	game.board.position_board[0] = "X"	
+	# 	game.board.position_board[1] = "X"	
+	# 	game.board.position_board[2] = "X"	
+	# 	assert_equal(true, game.game_over?)
+	# end
+
+
+
 
 
 end # class test console game
