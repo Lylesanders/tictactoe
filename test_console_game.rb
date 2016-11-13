@@ -3,9 +3,9 @@ require_relative "console_game.rb"
 
 class TestConsoleGame < Minitest::Test 
 
-	def test_0_plus0_equal_0					# Begin all tests with test
-		assert_equal(1, 1)	
-	end
+	# def test_0_plus0_equal_0					# Begin all tests with test
+	# 	assert_equal(1, 1)	
+	# end
 
 	def test_create_player
 		player = Human.new("X")
@@ -58,6 +58,35 @@ class TestConsoleGame < Minitest::Test
 		game.board.position_board[2] = marker	
 		assert_equal(true, game.board.winner?(marker))
 	end
+
+	def test_make_move
+		player_1 = player_1
+		player_2 = player_2
+		position_board = []
+		game = ConsoleGame.new(player_1, player_2)
+		board = Board
+		marker = "X"
+		current_player = player_1
+		move = 0
+		assert_equal("X", board.position_board[move]= marker)
+
+	end # test make move
+
+	def test_print_board
+		player_1 = player_1
+		player_2 = player_2
+		position_board = []
+		game = ConsoleGame.new(player_1, player_2)
+		board = Board
+		marker = "X"
+		current_player = player_1	
+		position_board = ["X","O","X","O","X","","O","",""]
+		print position_board
+		assert_equal((["X","O","X","O","X","","O","",""]) print_board)
+	end	
+
+
+
 
 
 
