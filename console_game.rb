@@ -34,7 +34,7 @@ class ConsoleGame
     end # make board
 
     def get_move
-    	current_player.get_move(board)
+    	current_player.get_move(board) # pull from console_human get_move(board)
     end # current move
 
     def print_board
