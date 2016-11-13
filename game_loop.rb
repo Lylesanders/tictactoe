@@ -8,6 +8,6 @@ game = ConsoleGame.new #(Human.new.("X"), (Human.new.("O")))
 
 game.print_board
 
-move = human.get_move(board)
+move = human.get_move(board) # from console_human det_move(board)
 
 game.make_move(move)
