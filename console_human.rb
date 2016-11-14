@@ -4,7 +4,7 @@ require_relative "board.rb"
 class Human
 		attr_reader :marker, :move, :board
 
-	def initialize #(marker)
+	def initialize(marker)
 		@marker = marker
 		@board = Board.new
 	end

@@ -4,7 +4,7 @@ require_relative "console_human.rb"
 class ConsoleGame
     attr_accessor :board, :player_1, :player_2, :current_player, :winner
 
-    def initialize #(player_1, player_2)
+    def initialize(player_1, player_2)
         @board = Board.new
         @player_1 = player_1
         @player_2 = player_2
