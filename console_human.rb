@@ -6,7 +6,7 @@ class Human
 
 	def initialize #(marker)
 		@marker = marker
-		@board = Board
+		@board = Board.new
 	end
 
 	def get_move(board)
