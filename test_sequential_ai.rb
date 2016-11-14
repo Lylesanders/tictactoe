@@ -12,6 +12,14 @@ class TestSequentialAI < Minitest::Test
 		assert_equal("O", current_player.marker)
 	end # test create player sequential ai
 
+	def test_for_0_with_board
+		current_player = Sequential_ai.new("O")
+		assert_equal(0,current_player.get_move(["","X","O"]) )
+	end
 
+	def test_for_1_with_board
+		current_player = Sequential_ai.new("O")
+		assert_equal(1,current_player.get_move(["X","","O"]) )
+	end
 
 end # class
