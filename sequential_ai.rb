@@ -1,7 +1,7 @@
 class Sequential_ai
 	attr_reader :marker
 
-	def initialize
+	def initialize(marker)
 		@marker = marker
 	end
 
