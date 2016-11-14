@@ -8,7 +8,7 @@ class ConsoleGame
         @board = Board.new
         @player_1 = player_1
         @player_2 = player_2
-        @current_player = player_2
+        @current_player = player_2 #referenced game_loop.rb 11
         @winner = winner
     end # initialize
 
@@ -34,7 +34,7 @@ class ConsoleGame
     end # make board
 
     def get_move
-    	current_player.get_move(board) # pull from console_human.rb get_move(board)
+    	current_player.get_move(board.board) # from game_loop line 11 to console human line 18
     end # current move
 
     def print_board

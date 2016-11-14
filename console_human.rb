@@ -10,12 +10,12 @@ class Human
 	end
 
 	def get_move(board)
-		move =""
+		# move =""
 		puts "Select your square"
 		move = gets.chomp.to_i
 		move = move - 1
-
-		if board[move] == ""
+# puts "move = #{move}, value for board[move] is #{board[move]}"
+		if board[move] == "" # from console_game line 37 undefined method []
 			move
 		else
 			puts "That square is already occupied"
