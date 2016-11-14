@@ -1,12 +1,13 @@
 class Board
 
-	attr_accessor :position_board, :update, :available_space # this section contains the names of the functions in this class, no question markers in this section
+	attr_accessor :position_board, :update, :available_space, :board # this section contains the names of the functions in this class, no question markers in this section
 	# question do all functions to be called in this class have to be listed in  attr_accessor?
 
 	def initialize 
 		@empty_square = "-"# unplaid square is empty
 		@board = Array.new(9,"")
 		@position_board = Array.new(9,"")
+		@board = Board.new
 
 	end #initialize
 
