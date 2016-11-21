@@ -82,11 +82,12 @@ class ConsoleGame
             Press:  
                     1 - Human
                     2 - Console AI 
+                    3 -Killroy AI
                     
             Then press ENTER
 
         """
-        who = {1 => Human, 2 => Sequential_ai}
+        who = {1 => Human, 2 => Sequential_ai, 3 => RandomAI}
         choice = gets.chomp.to_i
         player = who[choice].new("O")
 

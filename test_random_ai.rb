@@ -22,4 +22,18 @@ class TestRandomAI < Minitest::Test
         assert_equal(false,player.available_space?(["","X","O","X","O","X","O","X","X"],3))
     end # test position available false
 
+    def test_random_ai_move_0
+        player = RandomAI.new("X")
+        assert_equal(0, player.ai_move(["","X","O","X","O","X","O","X","X"]))
+    end #test random ai move 0
+    def test_random_ai_move_1
+        player = RandomAI.new("X")
+        assert_equal(1, player.ai_move(["X","","O","X","O","X","O","X","X"]))
+    end #test random ai move 1
+
+        def test_random_ai_move_2
+        player = RandomAI.new("X")
+        assert_equal(2, player.ai_move(["X","O","","X","O","X","O","X","X"]))
+    end #test random ai move 2
+
     end #class
