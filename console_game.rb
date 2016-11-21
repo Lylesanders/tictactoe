@@ -1,6 +1,7 @@
 require_relative "board.rb"
 require_relative "console_human.rb"
 require_relative "sequential_ai.rb"
+require_relative "random_ai.rb"
 	
 class ConsoleGame
     attr_accessor :board, :player_1, :player_2, :current_player, :winner
