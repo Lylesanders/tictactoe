@@ -1,5 +1,6 @@
 require_relative "board.rb"
 require_relative "console_human.rb"
+require_relative "sequential_ai.rb"
 	
 class ConsoleGame
     attr_accessor :board, :player_1, :player_2, :current_player, :winner
@@ -7,7 +8,7 @@ class ConsoleGame
     def initialize(player_1, player_2)
         @board = Board.new
         @player_1 = player_1
-        @player_2 = player_2
+        @player_2 = select_second_player
         @current_player = player_2 #referenced game_loop.rb 11
         @winner = winner
     end # initialize
@@ -73,7 +74,21 @@ class ConsoleGame
     end # end message
 
     def select_second_player
-    	true
+        puts """
+
+            Who would you like to play against?
+
+            Press:  
+                    1 - Human
+                    2 - Console AI 
+                    
+            Then press ENTER
+
+        """
+        who = {1 => Human, 2 => Sequential_ai}
+        choice = gets.chomp.to_i
+        player = who[choice].new("O")
+
     end # select second player
 
 
