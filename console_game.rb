@@ -23,17 +23,19 @@ class ConsoleGame
         @current_player
     end # change player
 
-    def game_over?
+    def game_over?  #called from game_loop.rb line 9 until game.game_over
     	# puts "Testing for game over"
-    	board.full_board? || board.winner?(current_player)
+    	board.full_board? || board.winner?(current_player.marker)
     end # game over
 
 
     def make_move(move)
+    	
     	board.update(move,current_player.marker)
     end # make board
 
     def get_move
+
     	current_player.get_move(board.board) # from game_loop line 11 to console human line 18
     end # current move
 
@@ -52,17 +54,17 @@ class ConsoleGame
 
     	 game board:
 
-    	   #{board.position_board[0]} | #{board.position_board[1]}  | #{board.position_board[2]}
-    	 ---+---+---
-    	   #{board.position_board[3]} | #{board.position_board[4]}  | #{board.position_board[5]}
-    	 ---+---+---
-    	  #{board.position_board[6]}  | #{board.position_board[7]}  | #{board.position_board[8]} 
+    	   #{board.board[0]} | #{board.board[1]}  | #{board.board[2]}
+    	 ----+----+----
+    	   #{board.board[3]} | #{board.board[4]}  | #{board.board[5]}
+    	 ----+----+----
+    	  #{board.board[6]}  | #{board.board[7]}  | #{board.board[8]} 
 
     	 """
     end # print board
 
-    def end_message
-    	if board.winner?(current_player.maker)
+    def end_message  #called from game_loop game.end_essage line 23
+    	if board.winner?(current_player.marker)
     		puts "#{current_player. marker} wins!"
     	else
     		board.full_board?

@@ -1,10 +1,14 @@
 require_relative "console_game.rb"
-require_relative "console_human.rb"
-require_relative "board.rb"
+#require_relative "console_human.rb"
+#require_relative "board.rb"
 
 # board = Board.new
 # human = Human.new
 game = ConsoleGame.new(Human.new("x"), Human.new("o"))
+
+until game.game_over? # points to game over line 25 in console_game                                                      
+
+game.change_player
 
 game.print_board
 
@@ -13,3 +17,7 @@ game.print_board
 game.make_move(move)
 
 game.print_board
+
+end
+
+game.end_message

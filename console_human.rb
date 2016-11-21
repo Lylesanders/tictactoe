@@ -9,17 +9,16 @@ class Human
 		@board = Board.new
 	end
 
-	def get_move(board)
-		# move =""
-		puts "Select your square"
+	def get_move(board) # from console_game line 37 get_move
+		print "  Select your square: "
 		move = gets.chomp.to_i
 		move = move - 1
-# puts "move = #{move}, value for board[move] is #{board[move]}"
-		if board[move] == "" # from console_game line 37 undefined method []
+		if board[move] == "" && move >= 0
 			move
 		else
 			puts "That square is already occupied"
 			get_move(board)
+
 		end # if
 	end #get move
 
