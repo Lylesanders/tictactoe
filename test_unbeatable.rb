@@ -11,6 +11,12 @@ class Testunbeatableai < Minitest::Test
 		assert_equal("x", player.marker)
 	end # test unbeatable ai player
 
+	def test_for_centerSquare
+		player = UnbeatableAi.new("O")
+		assert_equal(4,player.get_move(["O","X","X","O","","",",",""]))
+	end
+
+
 	
 
 
