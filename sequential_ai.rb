@@ -1,4 +1,4 @@
-class Sequential_ai
+class SequentialAi
 	attr_reader :marker
 
 	def initialize(marker)

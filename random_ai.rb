@@ -1,5 +1,5 @@
 #require_relative"board.rb"
-class RandomAI
+class RandomAi
     attr_reader :marker
     def initialize(marker)
         #@Board = board
