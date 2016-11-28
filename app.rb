@@ -16,3 +16,7 @@ get '/' do
     session[:board] = Board.new #(["","","","","","","","",""])
     erb :home, :layout => :home_layout, :locals =>{ :board => session[:board].board_positions}
 end #get '/' do
+
+get'/player_1_name' do
+    erb :player_1_name, :layout => :home_layout, :locals =>{ :board => session[:board].board_positions}
+end

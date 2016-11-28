@@ -1,13 +1,13 @@
 class Board
-attr_accessor :grid
+attr_accessor :board
 
     def initialize(board)
-        @grid = board
+        @board = board
     end #initialize
 
     def board_positions()
         new_board = []
-        grid.each_with_index do |value, index|
+        board.each_with_index do |value, index|
             if value == "X" || value == "O"
                 new_board.push(value)
             else
@@ -18,7 +18,7 @@ attr_accessor :grid
     end # def board_positions
 
     def update(position, marker)
-        grid[position] = marker
+        board[position] = marker
     end # update
 
     def valid_space?(position)
