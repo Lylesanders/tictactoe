@@ -6,7 +6,7 @@ class Board
 	def initialize 
 		@empty_square = "-"# unplaid square is empty
 		@board = Array.new(9,"")
-		@board = Array.new(9,"")
+		# @board = Array.new(9,"")
 		#@board = Board.new
 
 	end #initialize
