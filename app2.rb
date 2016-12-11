@@ -1,4 +1,4 @@
-require 'sinatra'
+require 'sinatra'       #this section loads the other programs needed in this section
 require 'rubygems'
 require_relative "new_board.rb"
 require_relative "human.rb"
@@ -8,18 +8,18 @@ require_relative "unbeatable_ai.rb"
 
 
 enable :sessions
-play_board = Board.new(["","","","","","","","",""])
+play_board = Board.new(3) # configures game board in new_board. 
 
-ai = ""
+#ai = ""
 
 get '/' do
-    session[:board] = Board.new(["","","","","","","","",""])
+    session[:board] = Board.new(3) # initializes a 3 by 3 grid for this game
 
-    erb :home, :layout => :home_layout, :locals =>{ :board => session[:board].board_positions}
+    erb :home, :layout => :home_layout, :locals =>{ :board => session[:board].board_positions} # reads the html file to display the board in the web page
 end #get '/' do
 
 get'/player_1_name' do
-    erb :player_1_name, :layout => :home_layout, :locals => { :board => session[:board].board_positions}
+    erb :player_1_name, :layout => :home_layout, :locals => { :board => session[:board].board_positions} #
 end
 
 post '/player_1_name' do
@@ -44,19 +44,19 @@ post '/choose_opponent' do
         redirect '/player_2_name'
 
     elsif player_2 =="sequential_ai"
-        session[:player_2] = SequentialAI.new("O")
+        session[:player_2] = SequentialAi.new("O")
         session[:player_2_name] = "Easy"
 
         redirect '/get_move'
 
     elsif player_2 =="random_ai"
-        session[:player_2] = RandomAI.new("O")
+        session[:player_2] = RandomAi.new("O")
         session[:player_2_name] = "Medium"
 
         redirect '/get_move'
 
     elsif player_2 =="unbeatable_ai"
-        session[:player_2] = UnbeatableAI.new("O")
+        session[:player_2] = UnbeatableAi.new("O")
         session[:player_2_name] = "Hard"
 
         redirect '/get_move'

@@ -1,33 +1,33 @@
 require "minitest/autorun"
-require_relative "console_human.rb"
+require_relative 'console_human.rb'
 
-class TestConsoleHuman < Minitest::Test 
 
-	# def test_0_plus0_equal_0					# Begin all tests with test
-	# 	assert_equal(1, 1)	
-	# end
+class TestConsoleHuman < Minitest::Test
 
-	def test_make_human_X
-		player = Human.new("X")
-		assert_equal("X", player.marker)
-	end 
+    def test_create_player
+        player = Console_human.new("X")
+        assert_equal("X", player.marker)
+    end
 
-	def test_make_human_O
-		player = Human.new("O")
-		assert_equal("O", player.marker)
-	end 
-
-	def test_make_move
-        player = Human.new("X")
+    def test_make_a_move
+        player = Console_human.new("X")
         move = player.get_move(Array.new(9, ""))
-        assert_equal(true, [0,1,2,3,4,5,6,7,8].include?(move))
-	end
+        assert_equal(true, [0, 1, 2, 3, 4, 5, 6, 7, 8].include?(move))
+    end
 
-    def test_invalid_out_of_range
-        player = Human.new("X")
-        move = player.get_move(Array.new(["X","O","X","O","X","O","X","O","X"]))
-        assert_equal(false, [0,1,2,3,4,5,6,7,8].include?(move))
-	end 
+    def test_invalid_move
+        player = Console_human.new("X")
+        move = player.get_move(["X","O","","","","","","",""])
+        assert_equal(false, [0, 1, 2, 3, 4, 5, 6, 7, 8].include?(move))
+    end
+        
 
 
-end #class test console human
+
+
+
+
+
+
+
+end

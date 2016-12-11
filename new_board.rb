@@ -1,9 +1,9 @@
 class Board
 
-attr_accessor :grid
-
-    def initialize(board)
-		@grid = board
+	attr_accessor :grid
+	
+	def initialize(board)
+		@grid = Array.new(board*board,"")
 	end
 
 	def board_positions()

@@ -1,22 +1,22 @@
-#require_relative"board.rb"
 class RandomAi
-    attr_reader :marker
-    def initialize(marker)
-        #@Board = board
-        @marker = marker
-    end # initialize
+    attr_accessor :marker
 
-    def available_space?(board, place)
-        board[place] ==""
-    end #available space
+    def initialize(marker)
+        @marker = marker
+    end
+
+    def valid_space?(board, choice)
+        # board[choice] == ""
+        board[choice] != "X" || board[choice] != "O"
+    end
 
     def get_move(board)
-        random_move = rand(0..8)
-        if available_space?(board, random_move) == false
+        random_move = rand(1..9)
+        if valid_space?(board, random_move) == false
             get_move(board)
-            else
-                random_move
-            end # if
-    end # ai_move
-
-end #class RandomAI
+        else
+            random_move
+        end
+    end
+ 
+    end
